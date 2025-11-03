@@ -383,17 +383,4 @@ def generate_test2_samples_vae(model, X_test2, test2_loader, device, n_samples_p
 
     print(f"  - Range of means: [{mean_across_samples.min():.4f}, {mean_across_samples.max():.4f}]")
 
-    # Show sample statistics for first few Test2 samples
-    print(f"\nSample Test2 Statistics (first 3 samples, first 5 features):")
-    print(f"{'Sample':<8} {'Feature':<15} {'Mean':<10} {'Std':<10} {'Min':<10} {'Max':<10}")
-    print("-" * 75)
-
-    for sample_idx in range(min(3, test2_samples_final.shape[0])):
-        for feature_idx in range(min(5, test2_samples_final.shape[2])):
-            feature_name = "Feature " + str(feature_idx)
-            sample_values = test2_samples_final[sample_idx, :, feature_idx]
-            print(f"{sample_idx:<8} {feature_name:<15} {sample_values.mean():<10.4f} {sample_values.std():<10.4f} "
-                f"{sample_values.min():<10.4f} {sample_values.max():<10.4f}")
-        if sample_idx < 2:  # Add separator between samples
-            print("-" * 75)
     return test2_samples
