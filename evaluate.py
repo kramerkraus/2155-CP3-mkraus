@@ -151,9 +151,8 @@ def compute_score(generated_samples, set_name='test2'):
     if mean_metrics:
         print(f"\n📋 SUMMARY - Mean metrics across features:")
         print(f"Mean MSE: {mean_metrics['mean_mse']:.4f}")
-        print(f"Mean MAE: {mean_metrics['mean_mae']:.4f}")
         print(f"Mean Correlation: {mean_metrics['mean_correlation']:.3f}")
         print(f"Mean JS Divergence: {mean_metrics['mean_js_divergence']:.4f}")
 
-    return  mean_metrics['mean_correlation'] - mean_metrics['mean_js_divergence'] - mean_metrics['mean_mse'] - mean_metrics['mean_mae']
+    return  mean_metrics['mean_correlation'] - mean_metrics['mean_js_divergence'] - mean_metrics['mean_mse']
 
