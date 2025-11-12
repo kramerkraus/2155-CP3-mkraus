@@ -43,8 +43,8 @@ def load_data(set_name='test2'):
     
     # Load test2 data from current directory
     try:
-        test2_original = pd.read_csv(f'dataset/{set_name}_original.csv').values
-        test2_mask = pd.read_csv(f'dataset/{set_name}_missing_mask.csv').values.astype(bool)
+        test2_original = pd.read_csv(f'2155-CP3-mkraus/dataset/{set_name}_original.csv').values
+        test2_mask = pd.read_csv(f'2155-CP3-mkraus/dataset/{set_name}_missing_mask.csv').values.astype(bool)
         print(f"✓ Found data in current directory")
     except FileNotFoundError:
         raise FileNotFoundError(f"Could not find {set_name}_original.csv and {set_name}_missing_mask.csv")
